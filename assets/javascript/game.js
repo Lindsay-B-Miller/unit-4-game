@@ -46,38 +46,56 @@ console.log("crystal2: " + crystal2);
 var crystal3 = random[3];
 console.log("crystal3: " + crystal3);
 
-//function for pushing value onto button in HTML
-function buttonValue() {
+//CRYSTAL 0 function for pushing value onto button in HTML
+function crystal0Value() {
     document.getElementById("crystal0").value = crystal0;
 };
-buttonValue();
+crystal0Value();
+//CRYSTAL 1 function for pushing value onto button in HTML
+function crystal1Value() {
+    document.getElementById("crystal1").value = crystal1;
+};
+crystal1Value();
+//CRYSTAL 2 function for pushing value onto button in HTML
+function crystal2Value() {
+    document.getElementById("crystal2").value = crystal2;
+};
+crystal2Value();
+//CRYSTAL 3 function for pushing value onto button in HTML
+function crystal3Value() {
+    document.getElementById("crystal3").value = crystal3;
+};
+crystal3Value();
 
 
-// On click event to record when a crystal has been clicked and the value of that crystal================================
 
-//Grabs value on click for crystal 0
-$("#crystal0").on("click", function () {
-    // console.log(crystal0 + "clicked crystal0");
-    console.log("crystal0: " + $(this).val());
-    arrayClicks.push(crystal0);
-    // totalScore = (crystal0 + valueOf(totalScore));
-    // console.log("total score: " + totalScore);
-});
-//Grabs value on click for crystal 1
-$("#crystal1").on("click", function () {
-    console.log(crystal1 + "clicked crystal1");
-    arrayClicks.push(crystal1);
-});
-//Grabs value on click for crystal 2
-$("#crystal2").on("click", function () {
-    console.log(crystal2 + "clicked crystal2");
-    arrayClicks.push(crystal2);
-});
-//Grabs value on click for crystal 3
-$("#crystal3").on("click", function () {
-    console.log(crystal3 + "clicked crystal3");
-    arrayClicks.push(crystal3);
-});
+
+
+// // On click event to record when a crystal has been clicked and the value of that crystal================================
+
+// //Grabs value on click for crystal 0
+// $("#crystal0").on("click", function () {
+//     // console.log(crystal0 + "clicked crystal0");
+//     console.log("crystal0: " + $(this).val());
+//     arrayClicks.push(crystal0);
+//     // totalScore = (crystal0 + valueOf(totalScore));
+//     // console.log("total score: " + totalScore);
+// });
+// //Grabs value on click for crystal 1
+// $("#crystal1").on("click", function () {
+//     console.log(crystal1 + "clicked crystal1");
+//     arrayClicks.push(crystal1);
+// });
+// //Grabs value on click for crystal 2
+// $("#crystal2").on("click", function () {
+//     console.log(crystal2 + "clicked crystal2");
+//     arrayClicks.push(crystal2);
+// });
+// //Grabs value on click for crystal 3
+// $("#crystal3").on("click", function () {
+//     console.log(crystal3 + "clicked crystal3");
+//     arrayClicks.push(crystal3);
+// });
 
 
 
