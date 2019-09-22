@@ -1,7 +1,7 @@
 // VARIABLES =================================================================================================
 var wins = 0;
 var losses = 0;
-var crystal = [];
+var crystals = [];
 var crystal0;
 var crystal1;
 var crystal3;
@@ -21,39 +21,50 @@ document.querySelector('#losses').innerHTML = "Losses: " + losses;
 document.querySelector('#wins').innerHTML = "Wins: " + wins;
 
 
+
 // CRYSTALS ===================================================================================
 // Generate four random numbers between 1-12, stored in var random
+
 for (var i = 0; i < 4; i++) {
-    var random = Math.floor(Math.random() * 12);
+    random.push(Math.floor(Math.random() * 13));
     console.log(random);
 }
-// Asssign each number to a crystal
-// for (var i = 0; i < random.length; i++) {
-//     crystal[i].push(random[i])
-//     console.log(crystal);
-// }
 
-random[0].push(crystal0);
-console.log(crystal0);
+// Asssign each number to a crystal===================================================
 
-// crystal[i].push(random[i])
+//Assigning value to crystal 0
+var crystal0 = random[0];
+console.log("crystal0: " + crystal0);
+// Assigning value to crystal 1
+var crystal1 = random[1];
+console.log("crystal1: " + crystal1);
+// Assigning value to crystal 2
+var crystal2 = random[2];
+console.log("crystal2: " + crystal2);
+// Assigning value to crystal 3
+var crystal3 = random[3];
+console.log("crystal3: " + crystal3);
 
+// On click event to record when a crystal has been clicked and the value of that crystal================================
 
-// console.log(crystal[i])
-
-// On click event to record when a crystal has been clicked and the value of that crystal 
-
-//trying just one crystal
+//Grabs value on click for crystal 0
+$("#crystal0").on("click", function () {
+    console.log(crystal0 + "clicked crystal0");
+});
+//Grabs value on click for crystal 1
 $("#crystal1").on("click", function () {
-    console.log($(this).val());
+    console.log(crystal1 + "clicked crystal1");
+});
+//Grabs value on click for crystal 2
+$("#crystal2").on("click", function () {
+    console.log(crystal2 + "clicked crystal2");
+});
+//Grabs value on click for crystal 3
+$("#crystal3").on("click", function () {
+    console.log(crystal3 + "clicked crystal3");
 });
 
-//trying loop for all crystals
-for (var i = 0; i < 4; i++) {
-    $("#crystal[i]").on("click", function () {
-        console.log($(this).val());
-    });
-}
+
 
 // Create a score that increases by the number added by the crystals
 
@@ -77,3 +88,4 @@ function reset() {
 
 }
 
+document.getElementById('crystal1').innerHTML = "crystal1: " + random[0];

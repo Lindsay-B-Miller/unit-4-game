@@ -20,6 +20,12 @@ p {
     color: green;
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 .guessingNumber {
     background-color: green;
     padding-bottom: 100px;
