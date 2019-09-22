@@ -8,7 +8,7 @@ var crystal3;
 var crystal3;
 var random = [];
 var arrayClicks = [];
-var totalScore;
+var totalScore = 0;
 
 // Need to generate a random number to be the target between 19-120
 function targetNum(min, max) {
@@ -46,12 +46,22 @@ console.log("crystal2: " + crystal2);
 var crystal3 = random[3];
 console.log("crystal3: " + crystal3);
 
+//function for pushing value onto button in HTML
+function buttonValue() {
+    document.getElementById("crystal0").value = crystal0;
+};
+buttonValue();
+
+
 // On click event to record when a crystal has been clicked and the value of that crystal================================
 
 //Grabs value on click for crystal 0
 $("#crystal0").on("click", function () {
-    console.log(crystal0 + "clicked crystal0");
+    // console.log(crystal0 + "clicked crystal0");
+    console.log("crystal0: " + $(this).val());
     arrayClicks.push(crystal0);
+    // totalScore = (crystal0 + valueOf(totalScore));
+    // console.log("total score: " + totalScore);
 });
 //Grabs value on click for crystal 1
 $("#crystal1").on("click", function () {
@@ -69,17 +79,22 @@ $("#crystal3").on("click", function () {
     arrayClicks.push(crystal3);
 });
 
+
+
 //array of all clicks occurred
 console.log(arrayClicks)
 
 // Create a score that increases by the number added by the crystals===================================
 // Add all elements of arrayClick together
 
+var theTotal = 0;
+$('button').click(function () {
+    theTotal = Number(theTotal) + Number($(this).val());
+    $('#score-number').text("Total: " + theTotal);
+});
 
+$('#score-number').text("Total: " + theTotal);
 
-// function myFunction() {
-document.getElementById("score-number").innerHTML = sum;
-// }
 
 
 // User wins if generatedTargetNum === totalScore
@@ -102,4 +117,4 @@ function reset() {
 
 }
 
-// document.getElementById('crystal1').innerHTML = "crystal1: " + random[0];
+document.getElementById('score-number').innerHTML = totalScore;
