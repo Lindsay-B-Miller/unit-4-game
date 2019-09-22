@@ -70,35 +70,6 @@ crystal3Value();
 
 
 
-
-// // On click event to record when a crystal has been clicked and the value of that crystal================================
-
-// //Grabs value on click for crystal 0
-// $("#crystal0").on("click", function () {
-//     // console.log(crystal0 + "clicked crystal0");
-//     console.log("crystal0: " + $(this).val());
-//     arrayClicks.push(crystal0);
-//     // totalScore = (crystal0 + valueOf(totalScore));
-//     // console.log("total score: " + totalScore);
-// });
-// //Grabs value on click for crystal 1
-// $("#crystal1").on("click", function () {
-//     console.log(crystal1 + "clicked crystal1");
-//     arrayClicks.push(crystal1);
-// });
-// //Grabs value on click for crystal 2
-// $("#crystal2").on("click", function () {
-//     console.log(crystal2 + "clicked crystal2");
-//     arrayClicks.push(crystal2);
-// });
-// //Grabs value on click for crystal 3
-// $("#crystal3").on("click", function () {
-//     console.log(crystal3 + "clicked crystal3");
-//     arrayClicks.push(crystal3);
-// });
-
-
-
 //array of all clicks occurred
 console.log(arrayClicks)
 
