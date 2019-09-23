@@ -86,7 +86,7 @@ $('input').click(function () {
 
     // User looses if totalScore > generatedTargetNum
     if (generatedTargetNum < theTotal) {
-        alert("you lost!")
+        alert("you lost! Please try again")
         losses++;
         $('#losses').text("Losses: " + losses);
         reset();
