@@ -67,9 +67,9 @@ console.log(arrayClicks)
 
 // Create a score that increases by the number added by the crystals==================================
 var theTotal = 0;
-$('button').click(function () {
+$('input').click(function () {
     theTotal = Number(theTotal) + Number($(this).val());
-    $('#score-number').text("Total: " + theTotal);
+    $('#score-number').text(theTotal);
 
 
     // User wins if generatedTargetNum === theTotal
