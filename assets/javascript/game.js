@@ -42,22 +42,26 @@ console.log("crystal3: " + crystal3);
 
 //CRYSTAL 0 function for pushing value onto button in HTML
 function crystal0Value() {
-    document.getElementById("crystal0").value = crystal0;
+    // document.getElementById("crystal0").value = crystal0;
+    $("#crystal0").val(crystal0);
 };
 crystal0Value();
 //CRYSTAL 1 function for pushing value onto button in HTML
 function crystal1Value() {
-    document.getElementById("crystal1").value = crystal1;
+    // document.getElementById("crystal1").value = crystal1;
+    $("#crystal1").val(crystal1);
 };
 crystal1Value();
 //CRYSTAL 2 function for pushing value onto button in HTML
 function crystal2Value() {
-    document.getElementById("crystal2").value = crystal2;
+    // document.getElementById("crystal2").value = crystal2;
+    $("#crystal2").val(crystal2);
 };
 crystal2Value();
 //CRYSTAL 3 function for pushing value onto button in HTML
 function crystal3Value() {
-    document.getElementById("crystal3").value = crystal3;
+    // document.getElementById("crystal3").value = crystal3;
+    $("#crystal3").val(crystal3);
 };
 crystal3Value();
 
@@ -103,7 +107,8 @@ function reset() {
     };
     generatedTargetNum = targetNum(19, 120);
     console.log("target number: " + generatedTargetNum);
-    document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
+    // document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
+    $("#guessingNumber").html(generatedTargetNum);
 
     // reset crystal numbers
     random = [];
@@ -130,8 +135,10 @@ function reset() {
     crystal3Value();
 }
 
+$("#guessingNumber").html(generatedTargetNum);
+
 // document.getElementById('score-number').innerHTML = totalScore;
-document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
+// document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
 
 
 // Need to count wins and losses
