@@ -15,7 +15,7 @@ function targetNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);;
 };
 var generatedTargetNum = targetNum(19, 120);
-console.log(generatedTargetNum);
+console.log("target number: " + generatedTargetNum);
 
 // Need to count wins and losses
 document.querySelector('#losses').innerHTML = "Losses: " + losses;
@@ -68,8 +68,6 @@ function crystal3Value() {
 crystal3Value();
 
 
-
-
 //array of all clicks occurred
 console.log(arrayClicks)
 
@@ -107,3 +105,4 @@ function reset() {
 }
 
 document.getElementById('score-number').innerHTML = totalScore;
+document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
