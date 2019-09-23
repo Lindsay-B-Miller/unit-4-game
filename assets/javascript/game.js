@@ -17,7 +17,7 @@ var generatedTargetNum = targetNum(19, 120);
 console.log("target number: " + generatedTargetNum);
 
 
-// CRYSTALS ===================================================================================
+// CRYSTALS ===================================================================================================
 // Generate four random numbers between 1-12, stored in var random
 
 for (var i = 0; i < 4; i++) {
@@ -65,9 +65,7 @@ crystal3Value();
 //array of all clicks occurred
 console.log(arrayClicks)
 
-// Create a score that increases by the number added by the crystals===================================
-// Add all elements of arrayClick together
-
+// Create a score that increases by the number added by the crystals==================================
 var theTotal = 0;
 $('button').click(function () {
     theTotal = Number(theTotal) + Number($(this).val());
@@ -78,6 +76,7 @@ $('button').click(function () {
     if (generatedTargetNum === theTotal) {
         alert("you won!")
         wins++;
+        $('#wins').text("Wins: " + wins);
         reset();
     }
 
@@ -85,30 +84,50 @@ $('button').click(function () {
     if (generatedTargetNum < theTotal) {
         alert("you lost!")
         losses++;
+        $('#losses').text("Losses: " + losses);
         reset();
     };
 
 });
 
-$('#score-number').text("Total: " + theTotal);
-
-
-
-
 
 // Reset function when user wins or looses
 function reset() {
+    // reset total score
+    theTotal = 0;
+    $('#score-number').text("0");
+
+    //reset target number 
     function targetNum(min, max) {
         return Math.floor(Math.random() * (max - min) + min);;
     };
-    var generatedTargetNum = targetNum(19, 120);
+    generatedTargetNum = targetNum(19, 120);
     console.log("target number: " + generatedTargetNum);
     document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
 
-    // copy in working loop for creating generatedTargetNum
-    // copy in working loop for reassigning crystals new numbers
-    // userScore = 0;
-
+    // reset crystal numbers
+    random = [];
+    for (var i = 0; i < 4; i++) {
+        random.push(Math.floor(Math.random() * 13));
+        console.log(random);
+    }
+    //Assigning value to crystal 0
+    crystal0 = random[0];
+    console.log("crystal0: " + crystal0);
+    // Assigning value to crystal 1
+    crystal1 = random[1];
+    console.log("crystal1: " + crystal1);
+    // Assigning value to crystal 2
+    crystal2 = random[2];
+    console.log("crystal2: " + crystal2);
+    // Assigning value to crystal 3
+    crystal3 = random[3];
+    console.log("crystal3: " + crystal3);
+    // running functions to push value to html
+    crystal0Value();
+    crystal1Value();
+    crystal2Value();
+    crystal3Value();
 }
 
 // document.getElementById('score-number').innerHTML = totalScore;
@@ -119,5 +138,3 @@ document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
 // document.querySelector('#losses').innerHTML = "Losses: " + losses;
 // document.querySelector('#wins').innerHTML = "Wins: " + wins;
 
-$('#losses').text("Losses: " + losses);
-$('#wins').text("Wins: " + wins);
