@@ -8,7 +8,6 @@ var crystal3;
 var crystal3;
 var random = [];
 var arrayClicks = [];
-var totalScore = 0;
 
 // Need to generate a random number to be the target between 19-120
 function targetNum(min, max) {
@@ -16,11 +15,6 @@ function targetNum(min, max) {
 };
 var generatedTargetNum = targetNum(19, 120);
 console.log("target number: " + generatedTargetNum);
-
-// Need to count wins and losses
-document.querySelector('#losses').innerHTML = "Losses: " + losses;
-document.querySelector('#wins').innerHTML = "Wins: " + wins;
-
 
 
 // CRYSTALS ===================================================================================
@@ -78,31 +72,52 @@ var theTotal = 0;
 $('button').click(function () {
     theTotal = Number(theTotal) + Number($(this).val());
     $('#score-number').text("Total: " + theTotal);
+
+
+    // User wins if generatedTargetNum === theTotal
+    if (generatedTargetNum === theTotal) {
+        alert("you won!")
+        wins++;
+        reset();
+    }
+
+    // User looses if totalScore > generatedTargetNum
+    if (generatedTargetNum < theTotal) {
+        alert("you lost!")
+        losses++;
+        reset();
+    };
+
 });
 
 $('#score-number').text("Total: " + theTotal);
 
 
 
-// User wins if generatedTargetNum === totalScore
-if (generatedTargetNum === totalScore) {
-    wins++;
-    reset()
-}
 
-// User looses if totalScore > generatedTargetNum
-if (generatedTargetNum < totalScore) {
-    losses++;
-    reset()
-};
 
 // Reset function when user wins or looses
 function reset() {
+    function targetNum(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);;
+    };
+    var generatedTargetNum = targetNum(19, 120);
+    console.log("target number: " + generatedTargetNum);
+    document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
+
     // copy in working loop for creating generatedTargetNum
     // copy in working loop for reassigning crystals new numbers
     // userScore = 0;
 
 }
 
-document.getElementById('score-number').innerHTML = totalScore;
+// document.getElementById('score-number').innerHTML = totalScore;
 document.getElementById("guessingNumber").innerHTML = generatedTargetNum;
+
+
+// Need to count wins and losses
+// document.querySelector('#losses').innerHTML = "Losses: " + losses;
+// document.querySelector('#wins').innerHTML = "Wins: " + wins;
+
+$('#losses').text("Losses: " + losses);
+$('#wins').text("Wins: " + wins);
