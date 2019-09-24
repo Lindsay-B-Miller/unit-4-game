@@ -23,7 +23,7 @@ $(document).ready(function () {
     // Generate four random numbers between 1-12, stored in var random
 
     for (var i = 0; i < 4; i++) {
-        random.push(Math.floor(Math.random() * 13));
+        random.push(Math.floor(Math.random() * 12) + 1);
         console.log(random);
     }
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
         // reset crystal numbers
         random = [];
         for (var i = 0; i < 4; i++) {
-            random.push(Math.floor(Math.random() * 13));
+            random.push(Math.floor(Math.random() * 12) + 1);
             console.log(random);
         }
         //Assigning value to crystal 0
